@@ -36,18 +36,18 @@ PRODUCT_COPY_FILES += \
 ifeq ($(strip $(MTK_IRTX_SUPPORT)),yes)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 PRODUCT_PACKAGES += consumerir.mt6755
-PRODUCT_PACKAGES += consumerir.mt6750
+#PRODUCT_PACKAGES += consumerir.mt6750
 else
 # IRTX over PWM
 ifeq ($(strip $(MTK_IRTX_PWM_SUPPORT)),yes)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 PRODUCT_PACKAGES += consumerir.mt6755
-PRODUCT_PACKAGES += consumerir.mt6750
+#PRODUCT_PACKAGES += consumerir.mt6750
 else
 ifeq ($(strip $(MTK_IR_LEARNING_SUPPORT)),yes)
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 PRODUCT_PACKAGES += consumerir.mt6755
-PRODUCT_PACKAGES += consumerir.mt6750
+#PRODUCT_PACKAGES += consumerir.mt6750
 endif
 endif
 endif
@@ -75,7 +75,7 @@ PRODUCT_PACKAGES += libvideoeditor_videofilters
 PRODUCT_PACKAGES += libvideoeditor_jni
 PRODUCT_PACKAGES += audio.primary.default
 PRODUCT_PACKAGES += audio.primary.mt6755
-PRODUCT_PACKAGES += audio.primary.mt6750
+#PRODUCT_PACKAGES += audio.primary.mt6750
 PRODUCT_PACKAGES += audio_policy.stub
 PRODUCT_PACKAGES += local_time.default
 PRODUCT_PACKAGES += libaudiocustparam
@@ -121,7 +121,7 @@ PRODUCT_PACKAGES += drvbd
 PRODUCT_PACKAGES += libaudio.usb.default
 PRODUCT_PACKAGES += audio.usb.default
 PRODUCT_PACKAGES += audio.usb.mt6755
-PRODUCT_PACKAGES += audio.usb.mt6750
+#PRODUCT_PACKAGES += audio.usb.mt6750
 PRODUCT_PACKAGES += AccountAndSyncSettings
 PRODUCT_PACKAGES += DeskClock
 PRODUCT_PACKAGES += AlarmProvider
@@ -158,7 +158,7 @@ PRODUCT_PACKAGES += thermal_manager
 PRODUCT_PACKAGES += thermald
 PRODUCT_PACKAGES += thermal
 PRODUCT_PACKAGES += thermal.mt6755
-PRODUCT_PACKAGES += thermal.mt6750
+#PRODUCT_PACKAGES += thermal.mt6750
 PRODUCT_PACKAGES += CellConnService
 ifneq ($(strip $(OPTR_SPEC_SEG_DEF)),NONE)
     PRODUCT_PACKAGES += MTKAndroidSuiteDaemon
@@ -169,10 +169,10 @@ PRODUCT_PACKAGES += calib.dat
 PRODUCT_PACKAGES += param.dat
 PRODUCT_PACKAGES += sensors.dat
 PRODUCT_PACKAGES += sensors.mt6755
-PRODUCT_PACKAGES += sensors.mt6750
+#PRODUCT_PACKAGES += sensors.mt6750
 PRODUCT_PACKAGES += libhwm
 PRODUCT_PACKAGES += lights.mt6755
-PRODUCT_PACKAGES += lights.mt6750
+#PRODUCT_PACKAGES += lights.mt6750
 $(foreach custom_hal_msensorlib,$(CUSTOM_HAL_MSENSORLIB),$(eval PRODUCT_PACKAGES += lib$(custom_hal_msensorlib)))
 PRODUCT_PACKAGES += meta_tst
 ifeq ($(MTK_SYSTEM_UPDATE_SUPPORT), yes)
@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += libmobilelog_jni
 PRODUCT_PACKAGES += libaudio.r_submix.default
 PRODUCT_PACKAGES += audio.r_submix.default
 PRODUCT_PACKAGES += audio.r_submix.mt6755
-PRODUCT_PACKAGES += audio.r_submix.mt6750
+#PRODUCT_PACKAGES += audio.r_submix.mt6750
 PRODUCT_PACKAGES += libaudio.usb.default
 PRODUCT_PACKAGES += libnbaio
 PRODUCT_PACKAGES += libaudioflinger
@@ -218,7 +218,7 @@ PRODUCT_PACKAGES += libmtkcam_device1
 PRODUCT_PACKAGES += libmtkcam_device3
 PRODUCT_PACKAGES += camera.default
 PRODUCT_PACKAGES += camera.mt6755
-PRODUCT_PACKAGES += camera.mt6750
+#PRODUCT_PACKAGES += camera.mt6750
 
 PRODUCT_PACKAGES += liblog
 PRODUCT_PACKAGES += shutdown
@@ -299,7 +299,7 @@ PRODUCT_PACKAGES += libMtkOmxApeDec
 PRODUCT_PACKAGES += libMtkOmxFlacDec
 PRODUCT_PACKAGES += ppp_dt
 PRODUCT_PACKAGES += power.mt6755
-PRODUCT_PACKAGES += power.mt6750
+#PRODUCT_PACKAGES += power.mt6750
 PRODUCT_PACKAGES += vendor.mediatek.hardware.power@2.0-impl
 
 ifneq ($(strip $(MTK_HIDL_PROCESS_CONSOLIDATION_ENABLED)), yes)
@@ -432,7 +432,7 @@ PRODUCT_PACKAGES += lcdc_screen_cap
 PRODUCT_PACKAGES += libJniAtvService
 PRODUCT_PACKAGES += GoogleKoreanIME
 PRODUCT_PACKAGES += memtrack.mt6755
-PRODUCT_PACKAGES += memtrack.mt6750
+#PRODUCT_PACKAGES += memtrack.mt6750
 PRODUCT_PACKAGES += mbimd
 PRODUCT_PACKAGES += android.hardware.memtrack@1.0-impl
 PRODUCT_PACKAGES += android.hardware.memtrack@1.0-service
@@ -459,7 +459,7 @@ PRODUCT_PACKAGES += CallLogBackup
 PRODUCT_PACKAGES += libacdk
 
 PRODUCT_PACKAGES += hwcomposer.mt6755
-PRODUCT_PACKAGES += hwcomposer.mt6750
+#PRODUCT_PACKAGES += hwcomposer.mt6750
 PRODUCT_PACKAGES += md_ctrl
 PRODUCT_PACKAGES += storagemanagerd
 
@@ -885,7 +885,7 @@ endif
 
 ifeq ($(strip $(MTK_GPU_SUPPORT)), yes)
     PRODUCT_PACKAGES += gralloc.mt6755
-    PRODUCT_PACKAGES += gralloc.mt6750
+#    PRODUCT_PACKAGES += gralloc.mt6750
     PRODUCT_PACKAGES += libOpenCL
     PRODUCT_PACKAGES += libGLES_mali
     PRODUCT_PACKAGES += libgpu_aux
@@ -1133,7 +1133,7 @@ PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.audio.low_late
 
 ifeq ($(strip $(TRUSTONIC_TEE_SUPPORT)), yes)
   PRODUCT_PACKAGES += keystore.mt6755
-  PRODUCT_PACKAGES += keystore.mt6750
+#  PRODUCT_PACKAGES += keystore.mt6750
   PRODUCT_PACKAGES += rda
 ifeq ($(strip $(MTK_TEE_TRUSTED_UI_SUPPORT)), yes)
   PRODUCT_PACKAGES += libTui
@@ -1170,11 +1170,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 ifeq ($(strip $(MICROTRUST_TEE_SUPPORT)), yes)
   PRODUCT_PACKAGES   += keystore.mt6755
-  PRODUCT_PACKAGES   += keystore.mt6750
+#  PRODUCT_PACKAGES   += keystore.mt6750
   PRODUCT_PACKAGES   += gatekeeper.mt6755
-  PRODUCT_PACKAGES   += gatekeeper.mt6750
+#  PRODUCT_PACKAGES   += gatekeeper.mt6750
   PRODUCT_PACKAGES   += kmsetkey.mt6755
-  PRODUCT_PACKAGES   += kmsetkey.mt6750
+#  PRODUCT_PACKAGES   += kmsetkey.mt6750
 endif
 
 #for tune2fs, mke2fs, fs_mgr
