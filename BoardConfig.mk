@@ -87,11 +87,23 @@ endif
 BOARD_RAMDISK_OFFSET = 0x05000000
 BOARD_TAGS_OFFSET = 0x4000000
 TARGET_USES_64_BIT_BINDER := true
+
 ifneq ($(MTK_K64_SUPPORT), yes)
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+BOARD_KERNEL_CMDLINE = bootopt=64S3,32S1,32S1 \
+	androidboot.selinux=permissive
+else
 BOARD_KERNEL_CMDLINE = bootopt=64S3,32S1,32S1
+endif
+else
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+BOARD_KERNEL_CMDLINE = bootopt=64S3,32N2,64N2 \
+	androidboot.selinux=permissive
 else
 BOARD_KERNEL_CMDLINE = bootopt=64S3,32N2,64N2
 endif
+endif
+
 BOARD_MKBOOTIMG_ARGS := --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --header_version 1
 
@@ -133,7 +145,12 @@ MTK_GPU_VERSION ?= mali midgard r18p0
 # Create vendor partition
 TARGET_COPY_OUT_VENDOR := vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+
+ifeq ($(RECOVERY_VARIANT),twrp)
+TARGET_RECOVERY_FSTAB := device/mediateksample/k50v1_64_bsp/twrp.fstab
+else
 TARGET_RECOVERY_FSTAB := $(MTK_PTGEN_PRODUCT_OUT)/$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(MTK_PLATFORM_DIR)
+endif
 
 # ODM image
 ifneq ($(filter $(MAKECMDGOALS),custom_images),)
