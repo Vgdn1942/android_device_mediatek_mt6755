@@ -147,7 +147,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
 ifeq ($(RECOVERY_VARIANT),twrp)
-TARGET_RECOVERY_FSTAB := device/mediateksample/k50v1_64_bsp/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/mediatek/mt6755/twrp.fstab
 else
 TARGET_RECOVERY_FSTAB := $(MTK_PTGEN_PRODUCT_OUT)/$(TARGET_COPY_OUT_VENDOR)/etc/fstab.$(MTK_PLATFORM_DIR)
 endif
