@@ -439,6 +439,7 @@ on post-fs-data
     chmod 0660 /dev/CAM_CAL_DRV
     chmod 0660 /dev/CAM_CAL_DRV1
     chmod 0660 /dev/CAM_CAL_DRV2
+    chmod 0660 /dev/BRCB032GWZ_3
 
     chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
@@ -451,6 +452,7 @@ on post-fs-data
     chown system camera /dev/CAM_CAL_DRV
     chown system camera /dev/CAM_CAL_DRV1
     chown system camera /dev/CAM_CAL_DRV2
+    chown system camera /dev/BRCB032GWZ_3
 
     #MATV
     chmod 0660 /dev/MATV
@@ -939,5 +941,4 @@ service osi /system/bin/osi
     chmod 0644 /proc/cpu_loading/poltime_secs
     chown system system /proc/cpu_loading/uevent_enable
     chmod 0644 /proc/cpu_loading/uevent_enable
-
 
