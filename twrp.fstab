@@ -24,7 +24,7 @@
 /tee2			emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/tee2			flags=backup=1;subpartitionof=/tee1
 /secro			emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/secro			flags=display="Secro";backup=1
 /keystore		emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/keystore
-/system_root	ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system		flags=display="System Root";backup=1
+/system			ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system
 /system_image	emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system
 /vendor			ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/vendor		flags=wipeingui;backup=1
 /vendor_image	emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/vendor

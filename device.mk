@@ -173,6 +173,8 @@ PRODUCT_PACKAGES += sensors.mt6755
 PRODUCT_PACKAGES += libhwm
 PRODUCT_PACKAGES += lights.mt6755
 #PRODUCT_PACKAGES += lights.mt6750
+PRODUCT_PACKAGES += qmcX983d
+PRODUCT_PACKAGES += st480
 $(foreach custom_hal_msensorlib,$(CUSTOM_HAL_MSENSORLIB),$(eval PRODUCT_PACKAGES += lib$(custom_hal_msensorlib)))
 PRODUCT_PACKAGES += meta_tst
 ifeq ($(MTK_SYSTEM_UPDATE_SUPPORT), yes)

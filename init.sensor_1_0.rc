@@ -179,3 +179,15 @@ on post-fs-data
     chown system system /sys/class/sensor/m_bio_misc/biodelay
     chown system system /sys/class/sensor/m_bio_misc/biobatch
     chown system system /sys/class/sensor/m_bio_misc/bioflush
+
+service st480 /vendor/bin/st480
+    user system
+    group system
+    class main
+
+service qmcX983d /vendor/bin/qmcX983d
+    user system
+    group system
+    class main
+    oneshot
+
