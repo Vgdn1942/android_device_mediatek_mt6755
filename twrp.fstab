@@ -30,6 +30,6 @@
 /vendor_image	emmc	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/vendor
 /cache			ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache
 /data			ext4	/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata		flags=encryptable=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/metadata
-/external_sd	auto	/dev/block/mmcblk1p1		/dev/block/mmcblk1						flags=display="External SD-Card";storage;wipeingui;removable;backup=0
-/usbotg			auto    /dev/block/sda1				/dev/block/sda							flags=display="USB OTG";storage;removable;backup=0
+/external_sd	auto	/dev/block/mmcblk1p1		/dev/block/mmcblk1						flags=display="MicroSD Flash";storage;wipeingui;removable;backup=0
+/usbotg			auto	/dev/block/sda1				/dev/block/sda							flags=display="USB OTG Flash";storage;removable;backup=0
 
