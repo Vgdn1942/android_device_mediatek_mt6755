@@ -527,6 +527,11 @@ else
   endif
 endif
 
+# NFC HIDL
+ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
+  PRODUCT_PACKAGES += android.hardware.nfc@1.1-service
+endif
+
 ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
   PRODUCT_PACKAGES += nfcstackp
   PRODUCT_PACKAGES += DeviceTestApp
@@ -860,6 +865,7 @@ endif
 
 ifeq ($(strip $(MTK_NFC_SUPPORT)), yes)
   PRODUCT_PACKAGES += NxpSecureElement
+  PRODUCT_PACKAGES += SecureElement
 endif
 
 ifeq ($(strip $(MTK_NFC_OMAAC_SUPPORT)),yes)
